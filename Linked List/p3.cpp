@@ -22,6 +22,7 @@ class LinkedList
     LinkedList()
     {
         head = NULL;
+        
     }
 
     void push_front(int d);
