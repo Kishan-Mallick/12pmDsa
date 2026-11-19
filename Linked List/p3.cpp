@@ -31,6 +31,22 @@ class LinkedList
 
 };
 
+void LinkedList::search(int d)
+{
+    Node *cur = head;
+    while(cur != NULL)
+    {
+        if(cur->data == d)
+        {
+            cout<<"Element Found"<<endl;
+            return;
+        }
+        cur = cur->next;
+    }
+
+    cout<<"Elemrnt Not found"<<endl;
+}
+
 void LinkedList::push_front(int d)
 {
     Node *temp = new Node;

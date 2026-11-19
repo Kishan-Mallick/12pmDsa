@@ -37,6 +37,7 @@ int main()
     scanf("%d",&n);
 
 
+
     int *ptr = (int*)malloc(n*sizeof(int)); //heap
 
     if(ptr == NULL)
