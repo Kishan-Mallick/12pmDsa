@@ -22,7 +22,7 @@ class LinkedList
     LinkedList()
     {
         head = NULL;
-        
+
     }
 
     void push_front(int d);
@@ -46,6 +46,36 @@ void LinkedList::search(int d)
     }
 
     cout<<"Elemrnt Not found"<<endl;
+    return;
+}
+
+void LinkedList::deleteNode(int d)
+{
+    Node *cur = head;
+    Node *prev = NULL;
+
+    if(cur->data == d)
+    {
+        head = cur->next;
+        delete cur;
+        return;
+    }
+
+    while(cur != NULL)
+    {
+        if(cur->data == d)
+        {
+            prev->next = cur->next;
+            delete cur;
+            return;
+        }
+        prev = cur;
+        cur = cur->next;
+        
+    }
+
+    cout<<"Elemrnt Not found"<<endl;
+    return;
 }
 
 void LinkedList::push_front(int d)
@@ -84,6 +114,12 @@ int main()
     sll.push_front(30);
     sll.push_front(15);
     sll.push_front(18);
+
+    sll.printList();
+
+    sll.search(40);
+
+    sll.deleteNode(18);
 
     sll.printList();
     
